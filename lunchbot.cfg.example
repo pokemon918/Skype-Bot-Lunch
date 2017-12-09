@@ -1,0 +1,14 @@
+import os
+
+DEBUG = False
+SECRET_KEY = b'PLEASE_CHANGE'
+
+# Application ID
+APP_ID = '<APP_ID>'
+# Secret password
+APP_PASSWORD = '<PASSWORD>'
+
+# Path to DB file
+BOT_DB_FILE = os.path.join(os.path.dirname(__file__), './data.txt')
+# Locale of the Bot
+BOT_LOCALE = 'uk'

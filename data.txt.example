@@ -1,0 +1,40 @@
+# DB has the next format:
+# `%` signs defines keywords command will be triggered
+# `@` defines command will be executed
+# all lines after command before next one are command parameters
+#
+# The next commands are supported:
+# - `@echo`: outputs parameters as response
+# - `@redirect`: processes parameters as they were requests from user
+#
+# In parameters variables can be used in format `{var_name}`. The list of supported ones:
+# - `message`: raw request from user before processing
+# - `request`: request after processing (only first line, lower case)
+# - `day_of_week_ukr`: current day of week in Ukrainian
+
+%help
+@echo
+I support the next commands:
+
+- greet
+- today
+
+%greet, hello
+@echo
+Hello! (wave)
+
+%today
+@redirect
+greet
+@echo
+Today is {day_of_week_ukr}
+
+# This special rule used when no other rule matches
+%$default
+@echo
+Sorry, unknown request "{request}". Please try "help" for supported commands.
+
+# This special rule used ehn user adds bot to contacts
+%$greeting
+@echo
+Hi! I'm bot, please try "help" to check what I can.

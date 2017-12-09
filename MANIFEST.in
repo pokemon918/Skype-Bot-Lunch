@@ -1,0 +1,1 @@
+include README.rst LICENSE lunchbot.cfg.example data.txt.example
