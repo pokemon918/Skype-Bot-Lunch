@@ -103,7 +103,7 @@ class BotDb(object):
                     elif line == '@random':
                         cmd = RandomCommand(self)
                     else:
-                        ValueError('Unknown command: {}'.format(line))
+                        raise ValueError('Unknown command: {}'.format(line))
 
                     rule.commands.append(cmd)
                 else:
