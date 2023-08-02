@@ -1,4 +1,4 @@
-lunchbot
+Skype-Bot-Lunch
 ========
 
 Simple Skype bot which helps to choose restaurant for lunch.
